@@ -1,8 +1,10 @@
 {
   "settings": {
-    "index.number_of_shards": {{ number_of_shards | default(5) }},
+    "index.number_of_shards": {{ number_of_shards | default(1) }},
     "index.number_of_replicas": {{ number_of_replicas | default(0) }},
-    "index.requests.cache.enable": false
+    "index.requests.cache.enable": false,
+    "index.refresh_interval": "1s",
+    "index.datastream_merge.policy": "tiered"
   },
   "mappings": {
     "dynamic": "strict",
